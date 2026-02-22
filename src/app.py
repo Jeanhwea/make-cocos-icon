@@ -78,7 +78,10 @@ def gen_mac_icns_icon(source_path: str, output_file: str):
         if img.mode != "RGBA":
             img = img.convert("RGBA")
 
-        img.save(output_path, "ICNS")
+        size = 512
+        resized = img.resize((size, size), Image.Resampling.LANCZOS)
+
+        resized.save(output_path, "ICNS")
         logger.info(f"Generated: {output_file}")
 
 
