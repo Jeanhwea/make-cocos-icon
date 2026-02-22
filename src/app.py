@@ -95,7 +95,10 @@ def gen_win_ico_icon(source_path: str, output_file: str):
         if img.mode != "RGBA":
             img = img.convert("RGBA")
 
-        img.save(output_path, "ICO")
+        size = 86
+        resized = img.resize((size, size), Image.Resampling.LANCZOS)
+
+        resized.save(output_path, "ICO")
         logger.info(f"Generated: {output_file}")
 
 
@@ -103,3 +106,4 @@ def gen_cocos_icon_files(source_path: str):
     gen_ios_png_icon(source_path, output_dir=IOS_ICON_PATH)
     gen_mac_icns_icon(source_path, output_file=MAC_ICON_PATH)
     gen_win_ico_icon(source_path, output_file=WIN_ICON_PATH)
+    logger.info("Icons generated successfully!")

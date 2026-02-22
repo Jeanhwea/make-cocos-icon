@@ -20,7 +20,6 @@ def main():
 
     args = parser.parse_args()
     gen_cocos_icon_files(args.source)
-    print("Icons generated successfully!")
 
 
 if __name__ == "__main__":
