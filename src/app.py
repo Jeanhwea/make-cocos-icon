@@ -98,7 +98,7 @@ def gen_win_ico_icon(source_path: str, output_file: str):
         if img.mode != "RGBA":
             img = img.convert("RGBA")
 
-        size = 86
+        size = 128
         resized = img.resize((size, size), Image.Resampling.LANCZOS)
 
         resized.save(output_path, "ICO")
