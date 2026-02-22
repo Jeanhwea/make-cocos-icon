@@ -33,6 +33,8 @@ IOS_ICONS = [
 
 MAC_ICON_PATH = "proj.ios_mac/mac/Icon.icns"
 
+WIN_ICON_PATH = "proj.win32/res/game.ico"
+
 
 def parse_icon_size(filename: str) -> int:
     match = re.search(r"Icon-([\d.]+)(?:@(\d)x)?\.png", filename)
@@ -80,6 +82,24 @@ def gen_mac_icns_icon(source_path: str, output_file: str):
         logger.info(f"Generated: {output_file}")
 
 
+def gen_win_ico_icon(source_path: str, output_file: str):
+    source = Path(source_path)
+    if not source.exists():
+        raise FileNotFoundError(f"Source image not found: {source_path}")
+
+    # 生成 ICO 文件
+    output_path = Path(output_file)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+
+    with Image.open(source_path) as img:
+        if img.mode != "RGBA":
+            img = img.convert("RGBA")
+
+        img.save(output_path, "ICO")
+        logger.info(f"Generated: {output_file}")
+
+
 def gen_cocos_icon_files(source_path: str):
     gen_ios_png_icon(source_path, output_dir=IOS_ICON_PATH)
     gen_mac_icns_icon(source_path, output_file=MAC_ICON_PATH)
+    gen_win_ico_icon(source_path, output_file=WIN_ICON_PATH)
