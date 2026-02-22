@@ -82,7 +82,7 @@ def gen_mac_icns_icon(source_path: str, output_file: str):
         resized = img.resize((size, size), Image.Resampling.LANCZOS)
 
         resized.save(output_path, "ICNS")
-        logger.info(f"Generated: {output_file}")
+        logger.info(f"Generated: {output_file} ({size}x{size})")
 
 
 def gen_win_ico_icon(source_path: str, output_file: str):
@@ -102,7 +102,7 @@ def gen_win_ico_icon(source_path: str, output_file: str):
         resized = img.resize((size, size), Image.Resampling.LANCZOS)
 
         resized.save(output_path, "ICO")
-        logger.info(f"Generated: {output_file}")
+        logger.info(f"Generated: {output_file} ({size}x{size})")
 
 
 def gen_cocos_icon_files(source_path: str):
