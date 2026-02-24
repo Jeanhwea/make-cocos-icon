@@ -8,9 +8,14 @@
 #    nuitka-project: --static-libpython=no
 #
 
-from src.app import gen_cocos_icon_files
-from src.consts import APP_NAME, APP_VERSION, APP_DESCRIPTION
 import argparse
+
+from src.app import gen_cocos_icon_files
+from src.consts import (
+    APP_DESCRIPTION,
+    APP_NAME,
+    APP_VERSION,
+)
 
 
 def main():
