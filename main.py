@@ -9,16 +9,14 @@
 #
 
 from src.app import gen_cocos_icon_files
-from src.__version__ import __title__
-from src.__version__ import __version__
-
+from src.consts import APP_NAME, APP_VERSION, APP_DESCRIPTION
 import argparse
 
 
 def main():
-    parser = argparse.ArgumentParser(description=__title__)
+    parser = argparse.ArgumentParser(description=APP_DESCRIPTION)
     parser.add_argument("source", help="Source image path (1024x1024 recommended)")
-    parser.add_argument("-v", "--version", action="version", version=__version__)
+    parser.add_argument("-v", "--version", action="version", version=APP_VERSION)
 
     args = parser.parse_args()
     gen_cocos_icon_files(args.source)

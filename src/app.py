@@ -5,11 +5,10 @@ from pathlib import Path
 
 from PIL import Image
 
-from src.__version__ import __version__
+from src.consts import APP_VERSION
 
 logger = logging.getLogger(__name__)
 
-APP_VERSION = f"v{__version__}"
 
 IOS_ICON_PATH = "proj.ios_mac/ios/Images.xcassets/AppIcon.appiconset"
 IOS_ICONS = [
