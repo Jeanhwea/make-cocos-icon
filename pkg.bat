@@ -80,7 +80,7 @@ goto :eof
 :: Package both applications
 call :package_app make-cocos-icon main.py
 if %errorlevel% neq 0 (
-    echo Failed to package AndroidCrashTraceTool
+    echo Failed to package make-cocos-icon
     exit /b %errorlevel%
 )
 
