@@ -8,7 +8,7 @@ GOTO :CMDSCRIPT
 
 set -eux
 uv run autoflake -i -r src
-uv run isort src
+uv run isort src main.py
 uv run black src
 uv run ruff format src main.py
 

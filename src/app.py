@@ -5,7 +5,11 @@ from pathlib import Path
 
 from PIL import Image
 
+from src.__version__ import __version__
+
 logger = logging.getLogger(__name__)
+
+APP_VERSION = f"v{__version__}"
 
 IOS_ICON_PATH = "proj.ios_mac/ios/Images.xcassets/AppIcon.appiconset"
 IOS_ICONS = [
@@ -106,6 +110,7 @@ def gen_win_ico_icon(source_path: str, output_file: str):
 
 
 def gen_cocos_icon_files(source_path: str):
+    logger.info(f"Current Version: {APP_VERSION}")
     gen_ios_png_icon(source_path, output_dir=IOS_ICON_PATH)
     gen_mac_icns_icon(source_path, output_file=MAC_ICON_PATH)
     gen_win_ico_icon(source_path, output_file=WIN_ICON_PATH)

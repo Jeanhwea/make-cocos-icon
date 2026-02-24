@@ -7,13 +7,15 @@
 # nuitka-project-if: {OS} in ("Linux"):
 #    nuitka-project: --static-libpython=no
 #
-import argparse
-import logging
+
 from src.app import gen_cocos_icon_files
+from src.__version__ import __title__
+
+import argparse
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate app icons for Cocos projects")
+    parser = argparse.ArgumentParser(description=__title__)
     parser.add_argument("source", help="Source image path (1024x1024 recommended)")
 
     args = parser.parse_args()
