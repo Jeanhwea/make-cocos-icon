@@ -3,6 +3,9 @@ import logging
 import os
 import sys
 
+logger = logging.getLogger(__name__)
+
+
 # 添加工程根目录到 Python 路径
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
