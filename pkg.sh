@@ -25,8 +25,7 @@ _dist_app() {
     # Create dmg volume
     if [ "${OS_NAME}" = "Darwin" ]; then
         mkdir -p ${DMG_DIR}
-        mv ${OUT_DIR}/${APP_PKG}.app ${DMG_DIR}
-        ln -s /Applications ${DMG_DIR}/Applications
+        mv ${OUT_DIR}/${APP_PKG} ${DMG_DIR}
         hdiutil create -volname ${DMG_VOL} -srcfolder ${DMG_DIR} -ov -format UDZO ${DMG_IMG}
         mkdir -p ${DST_DIR}
         mv ${DMG_IMG} ${DST_DIR}
