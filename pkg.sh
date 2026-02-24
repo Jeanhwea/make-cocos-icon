@@ -9,8 +9,8 @@ OS_ARCH=$(uname -m)
 OS_NAME=$(uname -s)
 
 DMG_DIR=${OUT_DIR}/dmg
-ZIP_DIR=${OUT_DIR}
-ZIP_IMG=${APP_PKG}-${OS_NAME}-${OS_ARCH}-${GIT_TAG}.zip
+DMG_VOL=${APP_PKG}-${OS_NAME}-${OS_ARCH}-${GIT_TAG}
+DMG_IMG=${OUT_DIR}/${APP_PKG}-${OS_NAME}-${OS_ARCH}-${GIT_TAG}.dmg
 
 # Clean old builds
 rm -rf ${OUT_DIR}
