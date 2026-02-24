@@ -19,6 +19,7 @@ rm -rf ${OUT_DIR}
 # source .venv/bin/activate
 uv run python -m nuitka main.py
 
+mkdir -p ${DMG_DIR}
 mv ${OUT_DIR}/${APP_PKG} ${DMG_DIR}
 hdiutil create -volname ${DMG_VOL} -srcfolder ${DMG_DIR} -ov -format UDZO ${DMG_IMG}
 mkdir -p ${DST_DIR}
