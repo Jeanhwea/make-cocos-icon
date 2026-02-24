@@ -11,8 +11,6 @@ import argparse
 import logging
 from src.app import gen_cocos_icon_files
 
-logging.basicConfig(level=logging.INFO, format="%(message)s")
-
 
 def main():
     parser = argparse.ArgumentParser(description="Generate app icons for Cocos projects")
