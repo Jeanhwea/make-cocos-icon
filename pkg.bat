@@ -38,7 +38,7 @@ mkdir "!OUT_DIR!"
 
 :: Build application
 echo Building application with Nuitka...
-uv run python -m nuitka --assume-yes-for-downloads !APP_ENT! --output-dir=!OUT_DIR!
+uv run python -m nuitka --assume-yes-for-downloads --include-windows-runtime-dlls=no !APP_ENT! --output-dir=!OUT_DIR!
 
 :: Check if build was successful
 if !errorlevel! neq 0 (
